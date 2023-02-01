@@ -563,7 +563,7 @@ setTimeout(() => {
 
 我们尝试注释 subject.complete()代码, 订阅不会执行, 页面空无一物
 
-## 操作符
+### 操作符
 
 操作符被调用时，它们不会**改变**已经存在的 Observable 实例。相反，它们返回一个**新的** Observable ，它的 subscription 逻辑基于第一个 Observable 。
 操作符可以处理派发的数据, 也可以处理 Observable 之间的关系.
