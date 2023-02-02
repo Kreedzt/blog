@@ -4,6 +4,7 @@ title: "Rx.js 入门"
 date: "2023-02-01"
 description: "该文章内容为 https://www.youtube.com/channel/UCVyRiMvfUNMA1UPlDPzG5Ow 的翻译"
 tags: ["web", "javascript"]
+draft: true
 ---
 
 # Rx.js 入门
@@ -364,9 +365,9 @@ var observable = Observable.create((observer: Observer<string>) => {
 }).share(); // 调用share
 ```
 
-我们查看[share()的文档]():
+我们查看[share()的文档](1):
 
-![rxjs-share](/rxjs-share.png)
+![rxjs-share](images/rxjs-share.png)
 
 share()使得 observable 变为多可播源, 每次 subscribe 此 observable 不会重新创建新的订阅流程
 我们用最容易理解的方式来注释以下代码:
@@ -573,7 +574,7 @@ setTimeout(() => {
 就如单词意思一样, merge 操作符可以合并多个 Observable 为一个新的 Observable
 [官方文档](https://cn.rx.js.org/class/es6/Observable.js~Observable.html#static-method-merge)
 
-![merge](/rxjs-merge.png)
+![merge](images/rxjs-merge.png)
 
 ```typescript
 import { Observable } from "rxjs/Observable";
