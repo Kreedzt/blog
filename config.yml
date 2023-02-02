@@ -1,4 +1,4 @@
-baseURL: "https://kreedzt.github.io/blog/"
+baseURL: "https://blog.kreedzt.com/"
 title: "Kreedzt's blog"
 languageCode: "zh-cn"
 paginate: 5
@@ -17,7 +17,7 @@ params:
     env: production # to enable google analytics, opengraph, twitter-cards and schema.
     title: "Kreedzt's blog"
     description: "Kreedzt's blog"
-    keywords: ["Blog", "Portfolio", "PaperMod"]
+    keywords: ["Blog", "Kreedzt", "PaperMod"]
     author: "Kreedzt"
     # author: ["Me", "You"] # multiple authors
     # images: ["<link or path of image for opengraph, twitter-cards>"]
