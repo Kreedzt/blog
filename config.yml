@@ -4,6 +4,14 @@ languageCode: "zh-cn"
 paginate: 5
 theme: papermod
 
+enableInlineShortcodes: true
+enableRobotsTXT: true
+buildDrafts: true
+buildFuture: false
+buildExpired: false
+enableEmoji: true
+pygmentsUseClasses: true
+
 
 params:
     env: production # to enable google analytics, opengraph, twitter-cards and schema.
@@ -13,7 +21,7 @@ params:
     author: "Kreedzt"
     # author: ["Me", "You"] # multiple authors
     # images: ["<link or path of image for opengraph, twitter-cards>"]
-    DateFormat: "January 2, 2006"
+    DateFormat: "2006-01-02"
     defaultTheme: auto # dark, light
     disableThemeToggle: false
 
