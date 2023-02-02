@@ -80,12 +80,12 @@ fuseOpts:
 
 menu:
   main:
-    - name: Archive
-      url: archives
-      weight: 5
-
     - name: Search
       url: search/
+      weight: 5
+
+    - name: Archive
+      url: archives/
       weight: 10
 
     - name: Tags
