@@ -2,12 +2,14 @@
 author: "Kreedzt"
 title: "Rx.js 入门"
 date: "2023-02-01"
-description: "该文章内容为 https://www.youtube.com/channel/UCVyRiMvfUNMA1UPlDPzG5Ow 的翻译"
+description: "rx.js 简明入门教程"
 tags: ["web", "javascript"]
-draft: true
+draft: false
 ---
 
 # Rx.js 入门
+
+> 该文章内容为 https://www.youtube.com/channel/UCVyRiMvfUNMA1UPlDPzG5Ow 的翻译
 
 > ReactiveX 通常用来解决异步的繁琐操作, ReactiveX 中所有数据都看作"流", 也是"流式编程"的集大成者, 并运用 ReactiveX 的操作符我们可以轻松联动多个异步操作之间的关系
 
@@ -367,7 +369,7 @@ var observable = Observable.create((observer: Observer<string>) => {
 
 我们查看[share()的文档](1):
 
-![rxjs-share](images/rxjs-share.png)
+![rxjs-share](../images/rxjs-share.png)
 
 share()使得 observable 变为多可播源, 每次 subscribe 此 observable 不会重新创建新的订阅流程
 我们用最容易理解的方式来注释以下代码:
@@ -402,9 +404,8 @@ setTimeout(() => {
 ```
 
 流程:
-![rxjs-流程1](/rxjs-流程1.png)
 
----
+![rxjs-流程1](../images/rxjs-流程1.png)
 
 #### fromEvent
 
@@ -574,7 +575,7 @@ setTimeout(() => {
 就如单词意思一样, merge 操作符可以合并多个 Observable 为一个新的 Observable
 [官方文档](https://cn.rx.js.org/class/es6/Observable.js~Observable.html#static-method-merge)
 
-![merge](images/rxjs-merge.png)
+![merge](../images/rxjs-merge.png)
 
 ```typescript
 import { Observable } from "rxjs/Observable";
@@ -671,7 +672,7 @@ newObservable.subscribe((x: number) => addItem("" + x));
 
 流程图:
 
-![rxjs-流程2](/rxjs-流程2.png)
+![rxjs-流程2](../images/rxjs-流程2.png)
 
 ## 总结
 

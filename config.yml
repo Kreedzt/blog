@@ -11,7 +11,7 @@ buildFuture: false
 buildExpired: false
 enableEmoji: true
 pygmentsUseClasses: true
-
+disqusShortname: "kreedzts-blog"
 
 params:
     env: production # to enable google analytics, opengraph, twitter-cards and schema.
@@ -99,4 +99,4 @@ markup:
     # codeFences: true
     # guessSyntax: true
     # lineNos: true
-    # style: monokai
+    style: monokai
