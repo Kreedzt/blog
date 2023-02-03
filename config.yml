@@ -41,17 +41,25 @@ params:
     showtoc: true
     tocopen: false
 
-socialIcons:
-    #- name: twitter
-    #  url: "https://twitter.com/"
-    # - name: stackoverflow
-    #   url: "https://stackoverflow.com"
-    - name: github
-      url: "https://github.com/Kreedzt"
+    profileMode:
+        enabled: true
+        title: "Kreedzt"
+        subtitle: "This is Kreedzt's blog page"
+        buttons:
+            - name: Archives
+              url: "/archives"
+
+    socialIcons:
+        #- name: twitter
+        #  url: "https://twitter.com/"
+        # - name: stackoverflow
+        #   url: "https://stackoverflow.com"
+        - name: github
+          url: "https://github.com/Kreedzt"
 
 analytics:
-    #google:
-    #  SiteVerificationTag: "XYZabc"
+    google:
+      SiteVerificationTag: "G-VCP5R6F7JW"
     #bing:
     #  SiteVerificationTag: "XYZabc"
     #yandex:
@@ -82,6 +90,7 @@ menu:
   main:
     - name: Search
       url: search/
+      pre: <i data-feather="search"></i>
       weight: 5
 
     - name: Archive
