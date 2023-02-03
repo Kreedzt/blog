@@ -57,34 +57,34 @@ params:
         - name: github
           url: "https://github.com/Kreedzt"
 
-analytics:
-    google:
-      SiteVerificationTag: "G-VCP5R6F7JW"
-    #bing:
-    #  SiteVerificationTag: "XYZabc"
-    #yandex:
-    #  SiteVerificationTag: "XYZabc"
+    analytics:
+        google:
+          SiteVerificationTag: "G-VCP5R6F7JW"
+        #bing:
+        #  SiteVerificationTag: "XYZabc"
+        #yandex:
+        #  SiteVerificationTag: "XYZabc"
 
 
-cover:
-    hidden: true # hide everywhere but not in structured data
-    hiddenInList: true # hide on list pages and home
-    hiddenInSingle: true # hide on single page
+    cover:
+        hidden: true # hide everywhere but not in structured data
+        hiddenInList: true # hide on list pages and home
+        hiddenInSingle: true # hide on single page
+
+    fuseOpts:
+        isCaseSensitive: false
+        shouldSort: true
+        location: 0
+        distance: 1000
+        threshold: 0.4
+        minMatchCharLength: 0
+        keys: ["title", "permalink", "summary", "content"]
 
 outputs:
     home:
         - HTML
         - RSS
         - JSON
-
-fuseOpts:
-    isCaseSensitive: false
-    shouldSort: true
-    location: 0
-    distance: 1000
-    threshold: 0.4
-    minMatchCharLength: 0
-    keys: ["title", "permalink", "summary", "content"]
 
 menu:
   main:
