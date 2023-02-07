@@ -58,9 +58,9 @@ params:
         - name: github
           url: "https://github.com/Kreedzt"
 
-    analytics:
-        google:
-          SiteVerificationTag: "G-VCP5R6F7JW"
+    # analytics:
+        # google:
+        #   SiteVerificationTag: "G-VCP5R6F7JW"
         #bing:
         #  SiteVerificationTag: "XYZabc"
         #yandex:
