@@ -12,6 +12,7 @@ buildExpired: false
 enableEmoji: true
 pygmentsUseClasses: true
 disqusShortname: "kreedzts-blog"
+googleAnalytics: G-VCP5R6F7JW
 
 params:
     env: production # to enable google analytics, opengraph, twitter-cards and schema.
