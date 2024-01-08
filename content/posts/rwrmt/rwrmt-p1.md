@@ -4,7 +4,6 @@ title: "VSCode 插件 RWR Mod Tool 开发历程(1)"
 date: "2024-01-08"
 description: "记录 VSCode 插件 RWR Mod Tool 历程"
 tags: ["vscode extension", "running with rifles", "mod", "npm", "nodejs", "javascript", "typescript"]
-draft: true
 ---
 
 ## 立项缘由
@@ -44,6 +43,29 @@ https://code.visualstudio.com/api/get-started/your-first-extension
   + 创建武器模板
   + 创建护甲模板
 - 插件打包及发布
+
+## 注册激活条件
+
+我们不需要在任意文件结构的目录都激活插件, 仅需要在 mod 目录即可.
+
+可使用 glob 表达式来限定工作区的文件, 若匹配才激活
+
+参考:
+
+https://code.visualstudio.com/api/references/activation-events#workspaceContains
+
+在 package.json 中写入以下内容, 限定插件激活条件:
+
+```json
+{
+  "activationEvents": [
+    "workspaceContains:**/calls/all_calls.xml",
+    "workspaceContains:**/factions/all_factions.xml",
+    "workspaceContains:**/items/all_carry_items.xml",
+    "workspaceContains:**/weapons/all_weapons.xml"
+  ]
+}
+```
 
 ## 注册命令
 
@@ -280,4 +302,38 @@ await vscode.window.showTextDocument(textDocument, {
 
 ## 配置发布流程
 
-当使用 pnpm 初始化时, 直接执行 vsce package 会出现问题
+### 打包
+
+参考: https://code.visualstudio.com/api/working-with-extensions/publishing-extension
+
+当使用 pnpm 初始化时, 直接执行 vsce package 会出现[如下问题](https://github.com/microsoft/vscode-vsce/issues/421)
+
+```txt
+npm ERR! missing ....
+```
+
+虽然 vsce 支持使用 pnpm 初始化作为包管理器, 但是发布流程不支持直接操作.
+
+解决方案见: https://github.com/microsoft/vscode-vsce/issues/421#issuecomment-1038911725
+
+### 注册发布账号
+
+1. 首先需要[创建项目组织](https://learn.microsoft.com/zh-cn/azure/devops/organizations/accounts/create-organization?view=azure-devops), 组织旗下可以存在多个发布者
+2. 按照 [文档获取 Access Token](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#get-a-personal-access-token)
+3. [创建发布者](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#create-a-publisher)
+4. 使用 vsce 凭借 Token 登录
+
+至此, 配置完毕, `vsce login` 后无需二次登录操作
+
+### 发布扩展程序
+
+按照[文档](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#publish-an-extension), 存在 2 种发布方式, 为方便发布, 之后使用 `vsce` 直接发布
+
+### 补充
+
+1. 版本根据 `package.json` 中的 `version` 指定即可
+2. 插件会使用 `README.md` 来作为预览文档
+3. `README.md` 文档插入**仅支持 https 格式外链或 base64 格式**, 无法使用相对路径图片等资源(见 [issue](https://github.com/microsoft/vscode-vsce/issues/390))
+4. `engines` 字段默认取当前 vscode 版本, 测试时需要注意更新 vscode 版本
+
+vscode 插件 package.json 使用字段参考: https://code.visualstudio.com/api/references/extension-manifest
